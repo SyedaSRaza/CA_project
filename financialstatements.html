@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Financial Statement</title>
+</head>
+<body>
+    <div class="statement">
+        <h2>Owner's Equity Statement</h2>
+        <table id="owner_equity_table">
+          <tr>
+            <th>Equity Component</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td>Owner's Capital</td>
+            <td><input type="number" name="owner_capital" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td>Net Income</td>
+            <td><input type="number" name="net_income" step="0.01" required></td>
+          </tr>
+        </table>
+        <div class="button-container">
+            <button type="button" onclick="addOwnerEquityRow()" class="btn-add">Add Row</button>
+            <button type="button" onclick="calculateOwnerEquity()" class="btn-calculate">Calculate</button>
+        </div>
+      </div>
+      
+      
+      
+      <div class="statement">
+        <h2>Income Statement</h2>
+        <table id="income_statement_table">
+          <tr>
+            <th>Revenue</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td>Sales</td>
+            <td><input type="number" name="sales" step="0.01" required></td>
+          </tr>
+          <tr>
+            <td>Expenses</td>
+            <td><input type="number" name="expenses" step="0.01" required></td>
+          </tr>
+        </table>
+        <div class="button-container">
+            <button type="button" onclick="addIncomeStatementRow()" class="btn-add">Add Row</button>
+            <button type="button" onclick="calculateIncomeStatement()" class="btn-calculate">Calculate</button>
+        </div>
+      </div>
+      
+      
+      
+</body>
+</html>
