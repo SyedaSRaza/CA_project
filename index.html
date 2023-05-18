@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" />
+    <title>Accounting cycle</title>
+
+    <link rel="stylesheet" href="/assets/style.css">
+
+</head>
+
+<body>
+    <h1 class="main_heading">Accounting</h1>
+    <div class="sidebar">
+        <h2>Account Head IDs</h2>
+        <ul class="head-list">
+            <li>101-Asset</li>
+            <li>201-Liability</li>
+            <li>301-Owner Capital</li>
+            <li>401-Revenues</li>
+            <li>501-Expenses</li>
+
+        </ul>
+    </div>
+
+    <!--form container-->
+    <div class="container">
+        <table class="_table">
+            <thead>
+                <tr>
+                    <th>Flag</th>
+                    <th>Account ID</th>
+                    <th>Date</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th width="50px">
+                        <div class="action_container">
+                            <button class="success" onclick="create_tr('table_body')">
+                                <i class="fa fa-plus"></i>
+                            </button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <form id="transactions" action="/transactions" method="POST">
+
+            <tbody id="table_body">
+                <tr>
+                    <td>
+                        <div class="select">
+                          <select name="flag" id="flag">
+                            <option disabled selected>Choose a flag</option>
+                            <option value="un-adjusted">Unadjusted</option>
+                            <option value="adjusted">Adjusted</option>
+                            <option value="close">Close</option>
+                          </select>
+                        </div>
+                      </td>
+                    <td>
+                        <input type="text" class="form_control" name="account_id" placeholder="101-Asset">
+                    </td>
+                    <td>
+                        <input type="date" class="form_control" name="date">
+                    </td>
+                    <td>
+                        <input type="text" class="form_control" name="debit" placeholder="$10000">
+                    </td>
+                    <td>
+                        <input type="text" class="form_control" name="credit" placeholder="$10000">
+                    </td>
+                    <td>
+                        <div class="action_container">
+                            <button class="danger" onclick="remove_tr(this)">
+                                <i class="fa fa-remove"></i>
+                            </button>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+            </form>
+        </table>
+    </div>
+    <div class="btn-create">
+        <a href=""><button class="btn-submit" type="submit">Create Transaction</button></a>
+    </div>
+    <div class="btn-search">
+        <a href=""><button class="btn-submit" type="submit">Search Transaction</button></a>
+    </div>
+    <div class="btn-financial">
+        <a href=""><button class="btn-submit" type="submit">Financial Statements</button></a>
+    </div>
+    <script src="/assets/script.js"></script>
+</body>
