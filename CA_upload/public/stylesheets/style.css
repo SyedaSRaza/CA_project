@@ -1,0 +1,40 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.action_container {
+  display: inline-flex;
+}
+
+.action_container>* {
+  border: none;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.action_container>*+* {
+  border-left: 1px solid #fff5;
+}
+
+.action_container>*:hover {
+  filter: hue-rotate(-20deg) brightness(0.97);
+  transform: scale(1.05);
+  border-color: transparent;
+  box-shadow: 0 2px 10px #0004;
+  border-radius: 2px;
+}
+
+.action_container>*:active {
+  transition: unset;
+  transform: scale(.95);
+}
